@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shorcut icon" type="image/png" href="https://icon-icons.com/icons2/1603/PNG/32/video-game-play-toad-mushroom-mario_108577.png">
+    <style type="text/css">
+        h1 {
+            text-align: center; 
+            font-family: monospace;
+        } 
+        fieldset {
+            background: green; width: 700px; 
+            margin: auto;
+        }
+        h1+fieldset+fieldset {background: yellow}
+        fieldset+fieldset+fieldset {background: red}
+        legend {background: white}
+        body {
+            background-image: url("https://image.arrivalguides.com/1230x800/06/f6404b3a84e4cfab0cdae8c4a4204c3a.jpg");
+            background-attachment: fixed; background-size: 100%
+        }
+    </style>
+</head>
+<body>
+    <form th:action="@{/formulario}" method="post">
+        <h1>Alta de usuario en revista online</h1>
+        <fieldset>
+            <legend>Datos personales</legend><br>
+            <div>Nombre: 
+                <input type="text" name="nombre">
+            </div><br>
+            <div>Primer apellido: 
+                <input type="text" name="apellidoPri">
+            </div><br>
+            <div>Segundo apellido: 
+                <input type="text" name="apellidoSeg">
+            </div><br>
+            <div>E-mail: 
+                <input type="email" name="email">
+            </div><br>
+            <div>Fecha nacimiento 
+                <input type="number" name="nacidoDia" maxlength="2" min="1" max="31" placeholder="Día">
+                <input type="number" name="nacidoMes" maxlength="2" min="1" max="12" placeholder="Mes">
+                <input type="number" name="nacidoAnio" maxlength="4" min="1920" max="2020" placeholder="Año">
+            </div><br>
+            <div>Contraseña: 
+                <input type="password" name="password">
+            </div><br>
+            <div>Sexo<br><br>
+                <label><input type="radio" name="hm" value="Hombre">Varón</label>
+                <label><input type="radio" name="hm" value="Mujer">Mujer</label>
+            </div><br>
+            <div>Dirección: 
+                <label><input type="text" name="direccion" placeholder="calle o plaza, número y piso."></label><br>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Nivel de estudios e intereses</legend><br>
+            <div>Nivel de estudios <br><br>
+                <label><input type="radio" name="estudios" value="cerEscolar">Certificado escolar</label><br>
+                <label><input type="radio" name="estudios" value="eso">Graduado en E.S.O</label><br>
+                <label><input type="radio" name="estudios" value="bachFP">Bachiller - Formación Profesional</label><br>
+                <label><input type="radio" name="estudios" value="diplo">Diplomado</label><br>
+                <label><input type="radio" name="estudios" value="liceDoc">Licenciado o Doctorado</label><br>
+            </div><br>
+            <div>Recibir artículos sobre los siguientes temas: <br><br>
+                <label><input type="checkbox" name="temas" value="Música">Música</label><br>
+                <label><input type="checkbox" name="temas" value="Deportes">Deportes</label><br>
+                <label><input type="checkbox" name="temas" value="Cine">Cine</label><br>
+                <label><input type="checkbox" name="temas" value="Libros">Libros</label><br>
+                <label><input type="checkbox" name="temas" value="Ciencia">Ciencia</label><br>
+            </div><br>           
+        </fieldset>
+        <fieldset>
+            <legend>Enviar formulario</legend><br>
+            <label>¿Estas seguro de que los datos son correctos?</label><br> 
+            <input type="submit" value="Enviar"/>  
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title></title>
+    <style>
+        #datosPersonales {
+            background-color: green;
+        }
+        #datosPersonales div {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        /*#datosPersonales div label{
+            width: 25%
+        }
+        #datosPersonales div input{
+            width: 50%
+        }*/
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {text-align: center; font-family: monospace;}
+        fieldset {
+            border : groove;
+            width: 80%;
+        }
+
+        input[type=text] {
+           width: 260px;
+       }
+       body {
+        background-image: url("https://img.pngio.com/sanjuan-hermanos-sa-textiles-para-el-hogar-la-playa-png-2000_1115.png");
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+
+    #direc {
+        width: 500px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">          
+            <form th:action="@{/formulario}" method="post">
+            <h1>Alta de usuario en revista online</h1>
+            <fieldset id="datosPersonales">  
+                <legend>Datos personales</legend>
+                <div >
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+                <div >
+                    <label for="apellidoPri">Primer apellido: <input type="text" name="apellidoPri"></label> 
+                </div>
+                <div>
+                    <label for="apellidoSeg">Segundo Apellido: <input type="text" name="apellidoSeg"></label>
+                </div>
+                <div>
+                    <label for="email">Email: <input type="email" name="email"></label>  
+                </div>
+                <div>
+                    <label> Fecha Nacimiento : 
+                        <input type="number" name="nacidoDia" maxlength="2" min="1" max="31" placeholder="Día">
+                        <input type="number" name="nacidoMes" maxlength="2" min="1" max="12" placeholder="Mes">
+                        <input type="number" name="nacidoAnio" maxlength="4" min="1920" max="2020" placeholder="Año">
+                    </label>
+                </div>
+                <div>
+                    <label for="password">Contraseña : <input type="password" name="password"></label>
+                </div>
+                <div>
+                 <div>
+                    <p>Sexo : </p>
+                    <div>
+                        <div>
+                            <input type="radio" name="hm" value="Hombre">
+                            <label for="hm"> Varón</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="hm" value="Mujer">
+                            <label for="hm"> Mujer</label> 
+                        </div>      
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="direccion">Dirección: <input type="text" name="direccion" placeholder="calle o plaza, número y piso." id="direc"></label>
+            </div>
+        </fieldset>
+        <fieldset class="form-group p-3" style="background-color: yellow;">
+            <legend>Nivel de estudios e intereses</legend>
+            <div>
+                <div class="row">
+                    <p class="col-form-label col-sm-5 pt-0">Nivel de estudios : </p>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input type="radio" name="estudios" value="cerEscolar">
+                            <label for="cerEsco"> Certificado escolar</label> 
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="estudios" value="eso">
+                            <label for="eso">Graduado en E.S.O</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="estudios" value="bachFP">
+                            <label for="bachFP">Bachiller - Formación Profesional</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="estudios" value="diplo">
+                            <label for="diplo">
+                                Diplomado
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="estudios" value="liceDoc">
+                            <label for="liceDoc">Licenciado o Doctorado</label>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                   <p class="col-form-label col-sm-5 pt-0">Recibir artículos sobre los siguientes temas: </p>
+                   <div class="col-sm-10">
+                       <div class="form-check">
+                        <input type="checkbox" name="temas" value="musica">
+                        <label for="musica">Música</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="temas" value="deport">
+                        <label for="deport">Deportes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="temas" value="cine">
+                        <label for="cine">Cine</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="temas" value="libros">
+                        <label for="libros">Libros</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="temas" value="ciencia">
+                        <label for="ciencia">Ciencia</label>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <<fieldset class="p-3" style="background-color: red;">
+        <legend>Enviar formulario</legend>
+        <p>¿Estas seguro de que los datos son correctos?</p>
+        <input type="submit" value="Enviar"/>
+    </fieldset>
+
+</form> 
+</div>
+</div>  
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npmpopper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcd/n.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

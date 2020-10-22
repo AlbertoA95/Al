@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<fieldset>
+	<legend>Datos personales</legend>
+	<p>Nombre: <label th:text=${nombre_formulario}> </label></p>
+	<p>Apellidos: 
+		<label th:text=${apellidoPri_formulario}> </label>
+		<label th:text=${apellidoSeg_formulario}> </label>
+	</p>	
+	<p>Email: <label th:text=${email_formulario}> </label></p>	
+	<p>Fecha de nacimiento(dd/mm/yyyy): 
+		<label th:utext=${nacido_formulario_Dia}></label> /
+		<label th:utext=${nacido_formulario_Mes}></label> /
+		<label th:utext=${nacido_formulario_Anio}></label>
+	</p>
+	<p>Password: <label th:text=${password_formulario}> </label></p>
+	<p>Sexo: <label th:text=${hm_formulario}> </label></p>
+	<p>Temas: <label th:text=${temas_formulario}> </label></p>
+</fieldset>
+</body>
+</html>
